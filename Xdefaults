@@ -1,0 +1,44 @@
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0200/c800
+urxvt*blurRadius: 80
+URxvt*borderLess: false
+!URxvt.depth: 32
+URxvt*geometry:          80x25
+!URxvt*background:        [80]black
+URxvt*foreground:        grey
+URxvt*inheritPixmap:     false
+URxvt*reverseVideo:  false
+URxvt*tintColor:         #dfdfdf
+!URxvt.font: xft:Monospace:pixelsize=11
+URxvt.font: xft:Heavy Data Nerd Font Plus Font Awesome Plus Opticons:pixelsize=11
+URxvt*scrollBar:  false
+URxvt*scrollColor:  #000000
+URxvt*saveLines:  5500
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.matcher.button: 2
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+!URxvt*cursorColor:  #d8d8d8
+!URxvt*colorBD:  lightyellow
+!URxvt*colorUL:  yellow   
+!
+!
+! Colors
+*background:  #1a1e24
+*foreground:  #cdd3df
+*color0:  #1a1e24
+*color1:  #252b33
+*color2:  #252a34
+*color3:  #3b4453
+*color4:  #505964
+*color5:  #cdd3df
+*color6:  #dae0ed
+*color7:  #cfcfcf
+*color8:  #ee6165
+*color9:  #fb924c
+*color10:  #fac751
+*color11:  #91b859
+*color12:  #5bb3b4
+*color13:  #6398cf
+*color14:  #c28aa3
+*color15:  #926b3e
