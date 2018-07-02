@@ -13,7 +13,7 @@ font pango: SauceCodePro NF 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt 
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -110,7 +110,7 @@ bindsym $mod+d mode "resize"
 
 # Custom keybindings
 bindsym Print exec xfce4-screenshooter
-bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/apps/rofi/themes/Paper.rasi
+bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/gruvbox.rasi
 
 # No titlebars
 for_window [class="^.*"] border pixel 0
@@ -120,13 +120,12 @@ gaps inner 8
 gaps outer 4
 
 # Backgrounds apps
-exec_always xcompmgr
-#exec_always xautolock -locker ~/.i3/scripts/lock.sh -time 15 -corners 0-00
+exec_always compton --config .config/compton/compton
 exec_always xautolock -time 15 -corners 0-00
 exec_always xscreensaver &
 exec_always nextcloud
 exec_always wal -R
-exec urxvt
+exec termite
 exec_always --no-startup-id ~/scripts/redshift.sh
 
 # Running apps
