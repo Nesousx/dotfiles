@@ -124,11 +124,11 @@
 #entry {
     spacing:    0;
     text-color: @normal-foreground;
-    font:       "Source Code Pro Semibold 20";
+    font:       "Hack 20";
 }
 #prompt {
     spacing:    0;
     padding:    2;
     text-color: @normal-foreground;
-    font:       "Source Code Pro Medium Italic 14";
+    font:       "Hack 14";
 }

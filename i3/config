@@ -5,7 +5,8 @@
 set $mod Mod4
 
 # Fonts
-font pango: SauceCodePro NF 11
+#font pango: SauceCodePro NF 11
+font Hack: 11
 
 # Keybindings
 
