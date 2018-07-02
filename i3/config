@@ -125,8 +125,9 @@ exec_always compton --config .config/compton/compton
 exec_always xautolock -time 15 -corners 0-00
 exec_always xscreensaver &
 exec_always nextcloud
-exec_always wal -R
+#exec_always wal -R
 exec termite
+exec_always nitrogen --restore
 exec_always --no-startup-id ~/scripts/redshift.sh
 
 # Running apps
