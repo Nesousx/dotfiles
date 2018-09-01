@@ -93,4 +93,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-export TERM=xterm-256color
+export TERM=xterm-color
+
+function push {
+    curl -s -F "token=o.ud11f9fz8bd6Ga9HYXdtgEHvnnalDEPr" \
+    -F "user=YOUR_USER_KEY_HERE" \
+    -F "title=`hostname` - " \
+    -F "message=$1" https://api.pushover.net/1/messages.json
+}

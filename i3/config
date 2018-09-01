@@ -127,6 +127,7 @@ exec_always xscreensaver &
 exec_always nextcloud
 #exec_always wal -R
 exec_always nitrogen --restore
+exec_always dropbox start
 exec_always --no-startup-id ~/scripts/redshift.sh
 
 # Running apps
@@ -209,6 +210,8 @@ for_window [class="Skype"] move to workspace $workspace8
 assign [class="Skype"] $workspace8
 assign [class="Atom"] $workspace3
 for_window [class="keepassxc"] floating enable
+assign [class="Civ6"] $workspace5
+for_window [class="Civ6"] move to workspace $workspace5
 
 # Focus
 client.focused #689d6a #689d6a #282828 #282828
