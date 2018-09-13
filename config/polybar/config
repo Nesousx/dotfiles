@@ -19,7 +19,7 @@ border-left-size = 10
 ;----------;
 
 bottom = false
-monitor = DP-1
+#monitor = DP-0
 wm-restack = none
 override-redirect = false
 
@@ -78,7 +78,7 @@ border-left-size = 10
 ;----------;
 
 bottom = true
-monitor = DP-1
+/monitor = DP-0
 wm-restack = none
 override-redirect = false
 
