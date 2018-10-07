@@ -121,20 +121,17 @@ gaps inner 8
 gaps outer 4
 
 # Backgrounds apps
-exec_always compton --config .config/compton/compton
-#exec_always xautolock -time 15 -corners 0-00
-exec_always xscreensaver &
-exec_always nextcloud
-#exec_always wal -R
-exec_always nitrogen --restore
-exec_always dropbox start
-exec_always --no-startup-id ~/scripts/redshift.sh
+exec xscreensaver &
+exec nextcloud
+exec nitrogen --restore
+exec dropbox start
+exec --no-startup-id ~/scripts/redshift.sh
+exec --no-startup-id ~/scripts/compton.sh
 
 # Running apps
 exec termite
-exec keepassxc
 exec firefox
-exec_always ~/Apps/Telegram/Telegram
+exec  ~/Apps/Telegram/Telegram
 exec numlockx on
 
 # scratchpad
@@ -212,6 +209,9 @@ assign [class="Atom"] $workspace3
 for_window [class="keepassxc"] floating enable
 assign [class="Civ6"] $workspace5
 for_window [class="Civ6"] move to workspace $workspace5
+assign [class="TPH.x86_64"] $workspace5
+for_window [class="TPH.x86_64"] move to workspace $workspace5
+
 
 # Focus
 client.focused #689d6a #689d6a #282828 #282828
