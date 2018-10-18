@@ -123,6 +123,7 @@ gaps outer 4
 # Backgrounds apps
 exec xscreensaver &
 exec nextcloud
+exec flameshot
 exec nitrogen --restore
 exec dropbox start
 exec --no-startup-id ~/scripts/redshift.sh
