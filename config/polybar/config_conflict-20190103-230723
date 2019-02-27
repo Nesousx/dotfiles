@@ -51,7 +51,7 @@ module-margin = 1.5
 
 modules-left = i3
 modules-center = 
-modules-right = battery date time
+modules-right = cpu volume date time
 
 tray-position = right
 tray-padding = 5
@@ -144,7 +144,7 @@ label = %date%
 [module/battery]
 type = internal/battery
 
-battery = BAT0
+battery = BAT1
 
 poll-interval = 1
 

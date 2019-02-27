@@ -128,7 +128,6 @@ exec nitrogen --restore
 exec dropbox start
 exec --no-startup-id ~/scripts/redshift.sh
 exec --no-startup-id ~/scripts/compton.sh
-#exec xcompmgr
 
 # Running apps
 exec termite
@@ -213,14 +212,10 @@ assign [class="Civ6"] $workspace5
 for_window [class="Civ6"] move to workspace $workspace5
 assign [class="TPH.x86_64"] $workspace5
 for_window [class="TPH.x86_64"] move to workspace $workspace5
-assign [class="Lutris"] $workspace9
-for_window [class="Lutris"] move to workspace $workspace9
-assign [class="Unity"] $workspace1
-for_window [class="Unity"] move to workspace $workspace1
+
 
 # Focus
 client.focused #689d6a #689d6a #282828 #282828
 client.focused_inactive #1d2021 #1d2021 #928374 #282828
 client.unfocused #32302f #32302f #928374 #282828
 client.urgent #cc241d #cc241d #ebdbb2 #282828
-exec xinput set-prop 11 291 1
