@@ -126,7 +126,8 @@ exec nextcloud
 exec flameshot
 exec nitrogen --restore
 exec dropbox start
-exec --no-startup-id ~/scripts/redshift.sh
+#exec --no-startup-id ~/scripts/redshift.sh
+exec_always ~/scripts/redshift.sh
 exec --no-startup-id ~/scripts/compton.sh
 #exec xcompmgr
 
