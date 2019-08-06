@@ -126,7 +126,7 @@ exec nextcloud
 exec flameshot
 exec nitrogen --restore
 exec dropbox start
-exec barrier-kvm
+exec flatpak run com.github.debauchee.barrier
 exec --no-startup-id ~/scripts/redshift.sh
 exec --no-startup-id ~/scripts/compton.sh
 #exec xcompmgr
