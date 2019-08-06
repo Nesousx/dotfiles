@@ -54,16 +54,16 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -126,10 +126,11 @@ exec nextcloud
 exec flameshot
 exec nitrogen --restore
 exec dropbox start
-#exec --no-startup-id ~/scripts/redshift.sh
-exec_always ~/scripts/redshift.sh
+exec barrier-kvm
+exec --no-startup-id ~/scripts/redshift.sh
 exec --no-startup-id ~/scripts/compton.sh
 #exec xcompmgr
+#exec polychromatic-tray-applet
 
 # Running apps
 exec termite
@@ -173,7 +174,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 #bar {
 # blocks
-#	status_command i3blocks -c ~/.i3/i3blocks.conf
+#	status_command i3blocks -c ~/.config/i3blocks/config
 # status
 #	status_command i3status -c .i3/status        
 
@@ -218,6 +219,8 @@ assign [class="Lutris"] $workspace9
 for_window [class="Lutris"] move to workspace $workspace9
 assign [class="Unity"] $workspace1
 for_window [class="Unity"] move to workspace $workspace1
+assign [class="Guild Wars 2"] $workspace8
+for_window [class="Guild Wars 2"] move to workspace $workspace8
 
 # Focus
 client.focused #689d6a #689d6a #282828 #282828
