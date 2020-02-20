@@ -16,12 +16,21 @@ numlockx &
 ~/Apps/Telegram/Telegram &
 ~/scripts/compton.sh &
 ~/scripts/redshift.sh &
+<<<<<<< HEAD
 #~/.config/polybar/launch.sh &
 tint2 &
+||||||| f38eafa
+~/scripts/redshift.sh &
+~/.config/polybar/launch.sh &
+=======
+tint2 &
+>>>>>>> 30c291ba658801416464ce8e017b0606199bed75
 
 ## Desktops
 
-bspc monitor -d    4  6 7   10
+#bspc monitor -d    4  6 7   10
+bspc monitor HDMI-1 -d 1 2 3 4 5
+bspc monitor DP-2  -d 6 7 8 9 10
 
 bspc config border_width         2
 bspc config window_gap          12
