@@ -16,8 +16,8 @@ numlockx &
 ~/Apps/Telegram/Telegram &
 ~/scripts/compton.sh &
 ~/scripts/redshift.sh &
-~/scripts/redshift.sh &
-~/.config/polybar/launch.sh &
+#~/.config/polybar/launch.sh &
+tint2 &
 
 ## Desktops
 

@@ -112,6 +112,7 @@ bindsym $mod+d mode "resize"
 # Custom keybindings
 bindsym Print exec xfce4-screenshooter
 bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/gruvbox.rasi
+bindsym $mod+l exec i3lock-fancy
 
 # No titlebars
 for_window [class="^.*"] border pixel 0
@@ -121,16 +122,13 @@ gaps inner 8
 gaps outer 4
 
 # Backgrounds apps
-exec xscreensaver &
+#exec xscreensaver -nosplash &
+exec xautolock -time 5 -locker /usr/bin/i3lock-fancy -detectsleep
 exec nextcloud
 exec flameshot
 exec nitrogen --restore
-exec dropbox start
-exec flatpak run com.github.debauchee.barrier
 exec --no-startup-id ~/scripts/redshift.sh
 exec --no-startup-id ~/scripts/compton.sh
-#exec xcompmgr
-#exec polychromatic-tray-applet
 
 # Running apps
 exec termite
@@ -142,9 +140,6 @@ exec numlockx on
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
-
-# lock
-bindsym $mod+l exec xscreensaver-command -lock
 
 # Notifications
 for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
@@ -227,4 +222,5 @@ client.focused #689d6a #689d6a #282828 #282828
 client.focused_inactive #1d2021 #1d2021 #928374 #282828
 client.unfocused #32302f #32302f #928374 #282828
 client.urgent #cc241d #cc241d #ebdbb2 #282828
-exec xinput set-prop 11 291 1
+
+#exec xinput set-prop 11 291 1
