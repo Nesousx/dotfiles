@@ -111,7 +111,8 @@ bindsym $mod+d mode "resize"
 
 # Custom keybindings
 bindsym Print exec xfce4-screenshooter
-bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/gruvbox.rasi
+bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/slate.rasi
+#bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/gruvbox.rasi
 bindsym $mod+l exec i3lock-fancy
 
 # No titlebars
@@ -120,6 +121,7 @@ for_window [class="^.*"] border pixel 0
 # Gaps
 gaps inner 8
 gaps outer 4
+gaps top 45
 
 # Backgrounds apps
 #exec xscreensaver -nosplash &
@@ -128,7 +130,9 @@ exec nextcloud
 exec flameshot
 exec nitrogen --restore
 exec --no-startup-id ~/scripts/redshift.sh
-exec --no-startup-id ~/scripts/compton.sh
+#exec --no-startup-id ~/scripts/compton.sh
+exec_always --no-startup-id picom --config ~/.config/picom.conf
+
 
 # Running apps
 exec termite
@@ -162,6 +166,7 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # polybar
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # tint2
