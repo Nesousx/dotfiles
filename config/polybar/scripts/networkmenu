@@ -1,0 +1,15 @@
+#!/bin/bash
+
+chosen=$(echo -e "Cancel\nSILVERNET\nSPSD\nLIBRARY\nDIRECT-Yk-13092-b-RC\nChocolate Office" | rofi -dmenu -i -l 6 -fullscreen 1)
+
+if [[ $chosen = "SILVERNET" ]]; then
+	sudo netctl switch-to wlp3s0-SILVERNET
+elif [[ $chosen = "SPSD" ]]; then
+	sudo netctl switch-to wlp3s0-SPSD
+elif [[ $chosen = "LIBRARY" ]]; then
+	sudo netctl switch-to wlp3s0-LIBRARY
+elif [[ $chosen = "DIRECT-Yk-13092-b-RC" ]]; then
+	sudo netctl switch-to wlp3s0-DIRECT-Yk-13092-b-RC
+elif [[ $chosen = "Chocolate Office" ]]; then
+	sudo netctl switch-to wlp3s0-Chocolate\ Office
+fi

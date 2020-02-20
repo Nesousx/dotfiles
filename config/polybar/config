@@ -1,244 +1,204 @@
-[bar/white]
+[bar/mybar]
 
-;------------;
-; DIMENSIONS ;
-;------------;
+; set output monitor
+monitor = DP-2
 
-width = 100%
-height = 20
-offset-y = 0
-offset-x = 0
+; tell wm not to configure the window
+override-redirect = true
 
-border-top-size = 10
-border-bottom-size = 0
-border-right-size = 10
-border-left-size = 10
-
-;----------;
-; LOCATION ;
-;----------;
-
-bottom = false
-#monitor = DP-0
-wm-restack = none
-override-redirect = false
-
-;-------;
-; FONTS ;
-;-------;
-
-font-0 = Hack:size=10;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=12;3"
-
-;--------;
-; COLORS ;
-;--------;
-
-background = 0
-foreground = #c5a9f9
-border-color = 0
-
-;---------------;
-; MISCELLANEOUS ;
-;---------------;
-
-fixed-center = true
-padding-left = 2 
-padding-right = 2
-module-margin = 1.5
-
-modules-left = i3 bspwm
-modules-center = 
-modules-right = battery date time
-
-tray-position = right
-tray-padding = 5
-
-#tray-detached = true
-
-[bar/mpd]
-;------------;
-; DIMENSIONS ;
-;------------;
-
-width = 100%
-height = 20
-offset-y = 0
-offset-x = 0
-
-border-top-size = 10
-border-bottom-size = 0
-border-right-size = 10
-border-left-size = 10
-
-;----------;
-; LOCATION ;
-;----------;
-
+; put the bar in the bottom
 bottom = true
-/monitor = DP-0
-wm-restack = none
-override-redirect = false
 
-;-------;
-; FONTS ;
-;-------;
-
-font-0 = Hack:size=10;3
-font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=10;3"
-font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=10;3"
-font-3 = "Font Awesome 5 Brands:pixelsize=10;3"
-
-;--------;
-; COLORS ;
-;--------;
-
-background = 0
-foreground = #c5a9a8
-border-color = 0
-
-;---------------;
-; MISCELLANEOUS ;
-;---------------;
-
+; prefer fixed center pos for the 'modules-center'-block
 fixed-center = true
-padding-left = 2 
-padding-right = 2
-module-margin = 1.5
 
-;modules-left = 
-modules-center = mpd
-;modules-right = 
+; dimension defined as perecentage or pixel values
+width = 95%
+height = 32
 
+; offset defined as percentage or pixel values
+offset-x = 2.5%
+offset-y = 13
 
-;---------;
-; MODULES ;
-;---------;
+; background color
+background = #2e3440
 
-[module/bspwm]
-type = internal/bspwm
+; foreground color
+foreground = #000
+
+; under-/overline pixel size and argb color
+line-size = 2
+line-color = #fff
+
+; num of spaces to end in the beginning/end of the bar
+padding-right = 3
+
+; num of spaces to add before each module
+module-margin = 1
+
+; fonts
+font-0 = IBM Plex Mono:medium:size=8;2
+font-1 = Font Awesome:size=10;3
+font-2 = unifont:size=10;3
+
+; modules
+modules-left = i3
+modules-center = 
+modules-right = cpu sep memory sep temperature sep wired-network sep alsa sep date
+
+; self-expl stuff
+separator = 
+spacing = 0
+dim-value = 1.0
+wm-name = i3
+
+; tray
+tray-position = center
+tray-detached = false
+tray-maxsize = 16
+tray-transparent = false
+tray-background = ${root.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-scale = 1.0
+
+; let polybar calculate the dpi for non-scalable fonts
+dpi-x = 0
+dpi-y = 0
+
+; support for inter-process messaging
+enable-icp = false
+
+; -------------------------------------------------------------------------------------
+; Modules
+; -------------------------------------------------------------------------------------
 
 [module/i3]
 type = internal/i3
 
 pin-workspaces = true
 strip-wsnumbers = true
+index-sort = true
+
+enable-click = true
 enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
 
-label-unfocused-foreground = #afafaf
-label-focused-foreground = #c5a9f9
-label-urgent-foreground = #ff0000
+fuzzy-match = true
 
-[module/time]
-type = internal/date
+label-unfocused = %index%
+label-unfocused-padding = 2
+label-ufocused-foreground = #d8dee9
 
-interval = 1.0
-
-date =  %H:%M
+label-focused = %index%
+label-focused-background = #4c566a
+label-focused-padding = 2
+label-focused-foreground = #d8dee9
 
 [module/date]
 type = internal/date
-date =  %e %B - %A
-label = %date%
+
+interval = 1.0
+date = %d.%m.%Y
+time = %H:%M
+
+date-alt = %A, %d %B %Y
+time-alt = %H:%M:%S
+
+label = %date% %time%
+label-font = 0
+label-foreground = #d8dee9
 
 
-[module/battery]
-type = internal/battery
+[module/wired-network]
+type = internal/network
+interface = wlp3s0
 
-battery = BAT0
+label-connected = :%upspeed% :%downspeed%
+format-connected = <label-connected>
+label-connected-foreground = #C5E1A5
 
-poll-interval = 1
+format-disconnected = <label-disconnected>
+label-disconnected = Nicht verbunden
+label-disconnected-foreground = #d62728
+label-disconnected-background = #a3be8c
 
-full-at = 95
+[module/cpu]
+type = internal/cpu
 
-label-discharging = %percentage%%
-label-charging = %percentage%%
-label-full = %percentage%%
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-full = <ramp-capacity> <label-full>
-format-charging =  <label-charging>
+label =  %percentage:2%%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+label-foreground = #4FC3F7
 
-[module/volume]
-type = internal/volume
+[module/memory]
+type = internal/memory
 
+interval = 1
+format = <label>
+
+label =  %gb_used% / %gb_total%
+
+label-foreground = #F48FB1
+
+[module/temperature]
+type = internal/temperature
+
+interval = 1
+thermal-zone = 0
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon1/temp1_input
+
+base-temperature = 30
+warn-temperature = 70
+
+units = true
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature-c%
+label-foreground = #FFF176
+
+label-warn = %temperature-c%
+label-warn-foreground = #d62728
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = #FFF176
+
+[module/alsa]
+type = internal/alsa
+
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+master-mixer = Master
+
+mapped = true
+interval = 5
 format-volume = <ramp-volume> <label-volume>
-format-muted =  0%
+
+label-muted =  Stumm
+label-muted-foreground = #D84315
+
+label-volume-foreground = #FFB300
+ramp-volume-foreground = #FFB300
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 
-[module/mpd]
-type = internal/mpd
+[module/decor-glyph]
+type = custom/text
+content-foreground = #4C566A
+margin = 0
 
-label-offline = mpd is offline
-format-online = <icon-prev> <toggle> <icon-next> <label-song>
-format-offline = <label-offline>
-host = 127.0.0.1
-port = 6600
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-bar-progress-width = 10
-bar-progress-indicator = |
-bar-progress-fill = ─
-bar-progress-empty = ─
-
-[module/backlight]
-type = internal/backlight
-
-; Use the following command to list available cards:
-; $ ls -1 /sys/class/backlight/
-card = radeon_bl0
-
-format = <ramp> <label>
-
-label = %percentage%%
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-
-[module/wlan]
-type = internal/network
-
-interface = wlp2s0
-
-interval = 5
-
-label-connected =  %essid%
-label-disconnected =  Not Connected
-
-[module/cpu]
-type = internal/cpu
-label =  %percentage%%
-
-
-[module/memory]
-type = internal/memory
-label =  %gb_used%
-
-[module/network]
-type = internal/network
-interface = wlp2s0
-label-connected =  %downspeed% |  %upspeed%
-
-#[bar/float]
-#inherit = bar/white
-#background = #ffffff
-#tray-position = center
+[module/sep]
+inherit = module/decor-glyph
+content = "/"
+n
