@@ -121,17 +121,20 @@ for_window [class="^.*"] border pixel 0
 # Gaps
 gaps inner 8
 gaps outer 4
-gaps top 45
+gaps top 15
 
 # Backgrounds apps
 #exec xscreensaver -nosplash &
-exec xautolock -time 5 -locker /usr/bin/i3lock-fancy -detectsleep
+#exec xautolock -time 5 -locker /usr/bin/i3lock-fancy -detectsleep
 exec nextcloud
 exec flameshot
 exec nitrogen --restore
 exec --no-startup-id ~/scripts/redshift.sh
+exec_always ~/scripts/xidle.sh
+#exec --no-startup-id ~/scripts/prevent_lock.sh
 #exec --no-startup-id ~/scripts/compton.sh
 exec_always --no-startup-id picom --config ~/.config/picom.conf
+exec --no-startup-id dunst
 
 
 # Running apps
@@ -166,7 +169,6 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # polybar
-#exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # tint2

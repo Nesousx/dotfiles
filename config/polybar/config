@@ -42,7 +42,7 @@ font-1 = Font Awesome:size=10;3
 font-2 = unifont:size=10;3
 
 ; modules
-modules-left = i3
+modules-left = workspaces
 modules-center = 
 modules-right = cpu sep memory sep temperature sep wired-network sep alsa sep date
 
