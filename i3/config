@@ -121,17 +121,14 @@ for_window [class="^.*"] border pixel 0
 # Gaps
 gaps inner 8
 gaps outer 4
-gaps top 15
+gaps top 20
 
 # Backgrounds apps
-#exec xscreensaver -nosplash &
-#exec xautolock -time 5 -locker /usr/bin/i3lock-fancy -detectsleep
 exec nextcloud
 exec flameshot
 exec nitrogen --restore
 exec --no-startup-id ~/scripts/redshift.sh
 exec_always ~/scripts/xidle.sh
-#exec --no-startup-id ~/scripts/prevent_lock.sh
 #exec --no-startup-id ~/scripts/compton.sh
 exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec --no-startup-id dunst
@@ -149,7 +146,7 @@ bindsym $mod+o scratchpad show
 
 
 # Notifications
-for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
+#for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
 
 
 # shutdown menu
@@ -223,6 +220,9 @@ assign [class="Unity"] $workspace1
 for_window [class="Unity"] move to workspace $workspace1
 assign [class="Guild Wars 2"] $workspace8
 for_window [class="Guild Wars 2"] move to workspace $workspace8
+assign [class="Path of Exile"] $workspace8
+for_window [class="Path of Exile"] move to workspace $workspace8
+
 
 # Focus
 client.focused #689d6a #689d6a #282828 #282828
