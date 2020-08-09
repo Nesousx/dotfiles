@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + r
-	rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/gruvbox.rasi
+	rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/slate.rasi
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -63,8 +63,10 @@ super + ctrl + {x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+#super + {_,shift + }{h,j,k,l}
+super + shift + {Left,Down,Up,Right}
+	#bspc node -{f,s} {west,south,north,east}
+	euclid_mover {west,south,north,east}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}

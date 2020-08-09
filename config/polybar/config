@@ -20,19 +20,28 @@
 [colors]
 
 ; Default Colors
-bar-bg=#cc282828
-background = #282828
-background-alt = #444
-foreground = #fbf1c7
-foreground-alt = #fbf1c7
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+#bar-bg=#cc282828
+#background = #282828
+#background-alt = #444
+#foreground = #fbf1c7
+#foreground-alt = #fbf1c7
+#primary = #ffb52a
+#secondary = #e60053
+#alert = #bd2c40
 
 ; Custom colors
-i3-focused = #fbf1c7
-i3-unfocused = #928374
-temp_warn = #ED2939
+#i3-focused = #fbf1c7
+#i3-unfocused = #928374
+#temp_warn = #ED2939
+
+background = ${xrdb:color0:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color7:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+
+
 
 [bar/top]
 
@@ -45,8 +54,11 @@ fixed-center = true
 underline-size=0
 bottom=false
 
-background = ${colors.bar-bg}
+#background = ${colors.bar-bg}
+#foreground = ${colors.foreground}
+background = ${colors.background}
 foreground = ${colors.foreground}
+
 
 line-size = 1
 line-color = #f00
@@ -68,7 +80,7 @@ font-4 = Noto Color Emoji:style=Regular:scale=10;2
 
 modules-left = i3
 modules-center = xwindow
-modules-right = filesystem cpu mem pulseaudio date
+modules-right = battery filesystem cpu mem pulseaudio date
 
 tray-position = right
 tray-padding = 2
@@ -77,7 +89,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 wm-restack = i3
 
-override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -360,21 +372,24 @@ label-muted =   Muted
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP0
+adapter = ADP1
 full-at = 98
 
 ;format-charging-background = #83a598
-format-charging = 
+#format-charging = 
+format-charging = Bat ++
 format-charging-underline = #ffb52a
 format-charging-padding = 1
 
 ;format-discharging-background = #83a598
-format-discharging =  
+#format-discharging = 
+format-discharging = Bat --
 format-discharging-underline = ${self.format-charging-underline}
 format-discharging-padding = 1
 
 ;format-full-background = #83a598
-format-full= 
+#format-full=  Full
+format-full= Batt Full
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 format-full-padding = 1
@@ -395,6 +410,10 @@ animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
+
+label-charging = Charging %percentage%%
+label-discharging = Discharging %percentage%%
+label-full = Fully charged
 
 [module/temperature]
 type = internal/temperature

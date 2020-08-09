@@ -6,15 +6,26 @@ set $mod Mod4
 
 # Fonts
 #font pango: SauceCodePro NF 11
-font Hack: 11
+#font Hack: 11
 
 # Keybindings
+    
+# Brightness
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
+bindsym XF86MonBrighnessDown exec "xbacklight -dec 5"
+# Sound
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume @DEFAULT_SINK@ +10%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume @DEFAULT_SINK@ -10%"
+bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
+
+# Start explorer
+#bindsym $mod+e exec ranger
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -46,7 +57,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating poggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -110,9 +121,8 @@ mode "resize" {
 bindsym $mod+d mode "resize"
 
 # Custom keybindings
-bindsym Print exec xfce4-screenshooter
 bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/slate.rasi
-#bindsym $mod+r exec rofi -show run -lines 3 -eh 2 -width 40 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/gruvbox.rasi
+bindsym --release Print exec --no-startup-id flameshot gui
 bindsym $mod+l exec i3lock-fancy
 
 # No titlebars
@@ -121,24 +131,27 @@ for_window [class="^.*"] border pixel 0
 # Gaps
 gaps inner 8
 gaps outer 4
-gaps top 20
+#gaps top 20
 
 # Backgrounds apps
-exec nextcloud
-exec flameshot
+exec nextcloud --background
+exec --no-startup-id flameshot
 exec nitrogen --restore
 exec --no-startup-id ~/scripts/redshift.sh
 exec_always ~/scripts/xidle.sh
 #exec --no-startup-id ~/scripts/compton.sh
 exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec --no-startup-id dunst
+exec wal -R
 
 
 # Running apps
-exec termite
+#exec termite
 exec firefox
+exec blueman-applet
 exec  ~/Apps/Telegram/Telegram
-exec numlockx on
+#exec  ~/Apps/BurpSuitePro/BurpSuitePro
+#exec numlockx on
 
 # scratchpad
 bindsym $mod+m move scratchpad
@@ -222,6 +235,27 @@ assign [class="Guild Wars 2"] $workspace8
 for_window [class="Guild Wars 2"] move to workspace $workspace8
 assign [class="Path of Exile"] $workspace8
 for_window [class="Path of Exile"] move to workspace $workspace8
+for_window [window_role="About"] floating enable
+for_window [class="Vmrc"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="unityhub"] floating enable
+for_window [class="Nitrogen"] floating enable
+for_window [class="Lxappearance"] floating enable
+# KDE
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
+for_window [class="plasmashell"] floating enable;
+for_window [class="systemsettings"] floating enable;
+for_window [class="systemsettings5"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"] 
 
 
 # Focus

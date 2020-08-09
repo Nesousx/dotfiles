@@ -1,7 +1,17 @@
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'https://github.com/arzg/vim-colors-xcode.git'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
 set nocompatible
 filetype indent plugin on
 syntax on
-colorscheme gruvbox
+colorscheme xcodedark
+" colorscheme gruvbox
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -19,3 +29,7 @@ set formatoptions-=o
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" fix shitty mouse
+set mouse=
+set ttymouse=
