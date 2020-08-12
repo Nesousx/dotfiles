@@ -10,7 +10,7 @@ call plug#end()
 set nocompatible
 filetype indent plugin on
 syntax on
-colorscheme xcodedark
+" colorscheme xcodedark
 " colorscheme gruvbox
 
 " Use case insensitive search, except when using capital letters
