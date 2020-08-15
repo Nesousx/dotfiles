@@ -9,6 +9,8 @@ set $mod Mod4
 #font Hack: 11
 
 # Keybindings
+# Switch to dock / non dock
+bindsym $mod+Shift+d exec ~/scripts/dock_me_up.sh
     
 # Brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
@@ -136,7 +138,7 @@ gaps outer 4
 # Backgrounds apps
 exec nextcloud --background
 exec --no-startup-id flameshot
-exec nitrogen --restore
+#exec nitrogen --restore
 exec --no-startup-id ~/scripts/redshift.sh
 exec_always ~/scripts/xidle.sh
 #exec --no-startup-id ~/scripts/compton.sh
