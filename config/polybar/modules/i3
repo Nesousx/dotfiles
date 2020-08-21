@@ -73,7 +73,7 @@ label-mode-background = ${colors.nord-red}
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %index%
-label-focused-foreground = #ffffff
+label-focused-foreground = ${colors.nord-blue}
 label-focused-background = #3f3f3f
 label-focused-underline = #fba922
 label-focused-padding = 4
@@ -104,7 +104,7 @@ label-visible-padding = 4
 ;   %output%
 ; Default: %icon%  %name%
 label-urgent = %index%
-label-urgent-foreground = ${colors.nord-red}
+label-urgent-foreground = ${colors.nord-blue}
 label-urgent-background = ${colors.nord-red}
 label-urgent-padding = 4
 
