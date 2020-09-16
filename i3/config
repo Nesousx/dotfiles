@@ -10,7 +10,9 @@ set $mod Mod4
 
 # Keybindings
 # Switch to dock / non dock
-bindsym $mod+Shift+d exec ~/scripts/dock_me_up.sh
+#bindsym $mod+Shift+d exec "autorandr --load docked"
+#bindsym $mod+Shift+l exec "autorandr --load laptop"
+bindsym $mod+Shift+d exec "~/scripts/toggle_monitor_2.sh"
     
 # Brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
@@ -142,7 +144,7 @@ exec --no-startup-id flameshot
 exec --no-startup-id ~/scripts/redshift.sh
 exec_always ~/scripts/xidle.sh
 #exec --no-startup-id ~/scripts/compton.sh
-exec_always --no-startup-id picom --config ~/.config/picom.conf
+#exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec --no-startup-id dunst
 exec wal -R
 

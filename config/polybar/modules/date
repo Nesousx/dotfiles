@@ -2,8 +2,8 @@
 type = internal/date
 interval = 1
 
-time = " %H:%M"
-time-alt = " %a, %b %d %H:%M"
+time = " %H:%M - %A %d %B"
+#time-alt = " %a, %b %d %H:%M"
 
 format-padding = 1
 format-prefix = %{T3}%{T-}
@@ -11,4 +11,5 @@ format-prefix-foreground = ${colors.nord-blue-light}
 label = %{T2}%time%%{T-}
 label-foreground = ${colors.nord-blue-light}
 
+; test
 ; vim:ft=dosini
