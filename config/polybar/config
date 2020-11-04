@@ -44,8 +44,8 @@ background = ${colors.polar-night-1}
 foreground = ${colors.fg}
 
 modules-left = i3 
-modules-center = date dunst
-modules-right = memory cpu pulseaudio wlan battery
+modules-center = memory cpu wlan battery pulseaudio
+modules-right = date dunst
 
 ; font-0 = "SauceCodePro Nerd Font:style=Medium:size=12;3"
 ; font-1 = "SauceCodePro Nerd Font:style=Bold:size=12;3"

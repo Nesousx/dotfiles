@@ -26,7 +26,7 @@ bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec terminator
 
 # Start explorer
 #bindsym $mod+e exec ranger
@@ -245,6 +245,8 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="unityhub"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Lxappearance"] floating enable
+for_window [class="Wpg"] floating enable
+for_window [class="Arandr"] floating enable
 # KDE
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [class="plasmashell"] floating enable;

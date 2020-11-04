@@ -2,7 +2,7 @@
 type = internal/date
 interval = 1
 
-time = " %H:%M - %A %d %B"
+time = " %A %d %B - %H:%M"
 #time-alt = " %a, %b %d %H:%M"
 
 format-padding = 1
