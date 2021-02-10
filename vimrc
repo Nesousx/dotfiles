@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'https://github.com/arzg/vim-colors-xcode.git'
+Plug 'arcticicestudio/nord-vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -12,6 +12,7 @@ filetype indent plugin on
 syntax on
 " colorscheme xcodedark
 " colorscheme gruvbox
+colorscheme nord
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -33,3 +34,5 @@ endif
 " fix shitty mouse
 set mouse=
 set ttymouse=
+
+" Fix weird but in terminator

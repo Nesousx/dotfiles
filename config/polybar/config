@@ -31,6 +31,7 @@ include-file = /home/$USER/.config/polybar/modules/pulseaudio
 ; include-file = /home/$USER/.config/polybar/modules/session
 include-file = /home/$USER/.config/polybar/modules/wlan
 include-file = /home/$USER/.config/polybar/modules/dunst
+include-file = /home/$USER/.config/polybar/modules/caffeine
 
 ; Configure the main bar
 [bar/main]

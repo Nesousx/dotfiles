@@ -1,3 +1,6 @@
+# Make vim default editor
+export EDITOR=vim
+
 # Use vi command in shell
 set -o vi
 
@@ -63,6 +66,7 @@ ZSH_THEME="ys"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  helm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -111,5 +115,10 @@ cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
+# Completion
+[[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
+
 # Aliases
-alias sshpass="ssh  -o PreferredAuthentications=password -o PubkeyAuthentication=no"
+alias sshpass='ssh  -o PreferredAuthentications=password -o PubkeyAuthentication=no'
+alias findoc='find ~/Documents/ -iname "*$1*"'
+alias pimeup='ssh rpi pihole restartdns'
