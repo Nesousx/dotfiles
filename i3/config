@@ -144,16 +144,13 @@ gaps outer 4
 
 # Backgrounds apps
 exec nextcloud --background
+exec pasystray
 #exec --no-startup-id xscreensaver -nosplash
-# exec --no-startup-id caffeine
-# exec --no-startup-id flameshot
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id ~/scripts/D2D/redshift.sh
 exec mattermost-desktop
 exec discord
 #exec_always ~/scripts/D2D/xidle.sh
-## exec --no-startup-id ~/scripts/D2D/compton.sh
-## exec_always --no-startup-id picom --config ~/.config/picom.conf
 exec --no-startup-id dunst
 exec wal -R
 
@@ -222,9 +219,11 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #}
 
 # Assignments
-assign [class="Firefox"] $workspace1
-assign [class="code-oss"] $workspace4
-for_window [class="code-oss"] move to workspace $workspace4
+#assign [class="Firefox"] $workspace1
+assign [class="Moonlight"] $workspace6
+for_window [class="Moonlight"] move to workspace $workspace6
+#assign [class="code-oss"] $workspace4
+#for_window [class="code-oss"] move to workspace $workspace4
 assign [class="Chromium"] $workspace6
 for_window [class="Chromium"] move to workspace $workspace6
 assign [class="x2goclient"] $workspace3

@@ -122,3 +122,17 @@ source ~/.cache/wal/colors-tty.sh
 alias sshpass='ssh  -o PreferredAuthentications=password -o PubkeyAuthentication=no'
 alias findoc='find ~/Documents/ -iname "*$1*"'
 alias pimeup='ssh rpi pihole restartdns'
+
+# Docker QoL
+alias dockershell="docker run --rm -i -t --entrypoint=/bin/bash"
+alias dockershellsh="docker run --rm -i -t --entrypoint=/bin/sh"
+
+function dockershellhere() {
+    dirname=${PWD##*/}
+    docker run --rm -it --entrypoint=/bin/bash -v `pwd`:/${dirname} -w /${dirname} "$@"
+}
+function dockershellshhere() {
+    dirname=${PWD##*/}
+    docker run --rm -it --entrypoint=/bin/sh -v `pwd`:/${dirname} -w /${dirname} "$@"
+}
+
