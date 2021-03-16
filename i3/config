@@ -127,8 +127,8 @@ bindsym $mod+d mode "resize"
 # Custom keybindings
 bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/slate.rasi
 bindsym --release Print exec --no-startup-id flameshot gui
-# bindsym $mod+l exec i3lock-fancy
-bindsym $mod+l exec xscreensaver-command -lock
+bindsym $mod+l exec ~/Apps/i3lock-bing/i3lock-bing.sh
+#bindsym $mod+l exec xscreensaver-command -lock
 
 # No titlebars
 for_window [class="^.*"] border pixel 0
@@ -150,7 +150,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id ~/scripts/D2D/redshift.sh
 exec mattermost-desktop
 exec discord
-#exec_always ~/scripts/D2D/xidle.sh
+exec_always ~/scripts/D2D/xidle.sh
 exec --no-startup-id dunst
 exec wal -R
 
