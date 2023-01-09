@@ -12,7 +12,7 @@ set $mod Mod4
 # Switch to dock / non dock
 #bindsym $mod+Shift+d exec "autorandr --load docked"
 #bindsym $mod+Shift+l exec "autorandr --load laptop"
-bindsym $mod+Shift+d exec "~/scripts/D2D/toggle_monitor_2.sh"
+bindsym $mod+Shift+d exec "~/Scripts/D2D/toggle_monitor_2.sh"
     
 # Brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
@@ -26,7 +26,7 @@ bindsym XF86AudioMute exec "pactl set-sink-mute @DEFAULT_SINK@ toggle"
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec x-terminal-emulator
 
 # Start explorer
 #bindsym $mod+e exec ranger
@@ -147,10 +147,8 @@ exec nextcloud --background
 exec pasystray
 #exec --no-startup-id xscreensaver -nosplash
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id ~/scripts/D2D/redshift.sh
-exec mattermost-desktop
-exec discord
-exec_always ~/scripts/D2D/xidle.sh
+exec --no-startup-id ~/Scripts/D2D/redshift.sh
+exec_always ~/Scripts/D2D/xidle.sh
 exec --no-startup-id dunst
 exec wal -R
 
@@ -165,8 +163,7 @@ exec --no-startup-id gnome-flashback
 exec firefox
 exec blueman-applet
 #exec pidgin
-exec  ~/Apps/Telegram/Telegram
-exec  mattermost_desktop
+exec  /usr/bin/telegram-desktop
 ## exec  ~/Apps/BurpSuitePro/BurpSuitePro
 ## exec numlockx on
 

@@ -102,21 +102,25 @@ source $ZSH/oh-my-zsh.sh
 #
 export TERM=xterm-color
 
+###### begin of wal ######
+
 # Make wal set colors on new terms
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+#(cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+#cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
+#source ~/.cache/wal/colors-tty.sh
+
+###### end of wal ######
 
 # Completion
-[[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
+#[[ /usr/bin/kubectl ]] && source <(kubectl completion zsh)
 
 # Aliases
 alias sshpass='ssh  -o PreferredAuthentications=password -o PubkeyAuthentication=no'
