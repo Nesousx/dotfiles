@@ -12,7 +12,7 @@ set $mod Mod4
 # Switch to dock / non dock
 #bindsym $mod+Shift+d exec "autorandr --load docked"
 #bindsym $mod+Shift+l exec "autorandr --load laptop"
-bindsym $mod+Shift+d exec "~/Scripts/D2D/toggle_monitor_2.sh"
+#bindsym $mod+Shift+d exec "~/Scripts/D2D/toggle_monitor_2.sh"
     
 # Brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
@@ -125,7 +125,7 @@ mode "resize" {
 bindsym $mod+d mode "resize"
 
 # Custom keybindings
-bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc -config ~/.config/rofi/slate.rasi
+bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc 
 bindsym --release Print exec --no-startup-id flameshot gui
 bindsym $mod+l exec ~/Apps/i3lock-bing/i3lock-bing.sh
 #bindsym $mod+l exec xscreensaver-command -lock
@@ -144,28 +144,27 @@ gaps outer 4
 
 # Backgrounds apps
 exec nextcloud --background
-exec pasystray
-#exec --no-startup-id xscreensaver -nosplash
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id ~/Scripts/D2D/redshift.sh
+exec_always --no-startup-id nm-applet
+#exec --no-startup-id ~/Scripts/D2D/redshift.sh
 exec_always ~/Scripts/D2D/xidle.sh
 exec --no-startup-id dunst
 exec wal -R
 
 # Gnome session
-exec --no-startup-id /usr/lib/gsd-xsettings
-exec_always --no-startup-id gnome-power-manager
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id gnome-flashback
+#exec --no-startup-id /usr/lib/gsd-xsettings
+#exec_always --no-startup-id gnome-power-manager
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id gnome-flashback
+
+# Fix touchpad
+exec_always --no-startup-id 'xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 0'
+exec_always --no-startup-id 'xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1'
 
 # Running apps
-## exec termite
 exec firefox
-exec blueman-applet
-#exec pidgin
+exec_always --no-startup-id blueman-applet
 exec  /usr/bin/telegram-desktop
-## exec  ~/Apps/BurpSuitePro/BurpSuitePro
-## exec numlockx on
 
 # scratchpad
 bindsym $mod+m move scratchpad
@@ -287,6 +286,7 @@ for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="Gnome-power-statistics"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"] 
 
