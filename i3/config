@@ -146,6 +146,7 @@ gaps outer 4
 exec nextcloud --background
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id nm-applet
+exec_always --no-startup-id diodon
 #exec --no-startup-id ~/Scripts/D2D/redshift.sh
 exec_always ~/Scripts/D2D/xidle.sh
 exec --no-startup-id dunst
@@ -158,8 +159,7 @@ exec wal -R
 #exec --no-startup-id gnome-flashback
 
 # Fix touchpad
-exec_always --no-startup-id 'xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 0'
-exec_always --no-startup-id 'xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1'
+# Touch to tap + natural scrolling can be fixed in X11 config.
 
 # Running apps
 exec firefox
@@ -176,8 +176,7 @@ bindsym $mod+o scratchpad show
 
 
 # shutdown menu
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit?' -b 'ye' 'i3-msg exit'"
-bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit?' -b 'ye' 'i3-msg exit'"
 
 # Colors
 set_from_resource $fg i3wm.color7 #f0f0f0
@@ -249,6 +248,7 @@ for_window [class="Skype"] move to workspace $workspace8
 assign [class="Skype"] $workspace8
 assign [class="Atom"] $workspace3
 for_window [class="keepassxc"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
 assign [class="Civ6"] $workspace5
 for_window [class="Civ6"] move to workspace $workspace5
 assign [class="TPH.x86_64"] $workspace5
