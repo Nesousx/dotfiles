@@ -5,7 +5,7 @@ export EDITOR=vim
 set -o vi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$HOME/scripts:$PATH:/$HOME/.local/bin
+export PATH=$HOME/bin:/usr/local/bin:$HOME/Scripts:$PATH:/$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
   export ZSH="$HOME/.oh-my-zsh"

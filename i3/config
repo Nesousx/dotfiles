@@ -147,8 +147,11 @@ exec nextcloud --background
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id diodon
-#exec --no-startup-id ~/Scripts/D2D/redshift.sh
+exec --no-startup-id ~/Scripts/D2D/redshift.sh
 exec_always ~/Scripts/D2D/xidle.sh
+exec_always --no-startup-id numlockx
+exec_always --no-startup-id picom
+exec_always --no-startup-id tilda
 exec --no-startup-id dunst
 exec wal -R
 
