@@ -30,6 +30,7 @@ bindsym $mod+Return exec x-terminal-emulator
 
 # Start explorer
 #bindsym $mod+e exec ranger
+bindsym $mod+f exec nautilus
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -53,7 +54,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym F11 fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -138,22 +139,22 @@ gaps inner 8
 gaps outer 4
 #gaps top 20
 
+# Backgrounds apps
+exec firefox
+exec telegram-desktop
+exec nextcloud --background
+exec nitrogen --restore
+exec tilda
+exec_always numlockx
+exec_always picom
+exec_always dunst
+exec_always wal -R
+exec_always --no-startup-id ~/Scripts/D2D/redshift.sh
+#exec_always --no-startup-id ~/Scripts/D2D/xidle.sh
+
+
 # Use KDE / Plasma
 #exec --no-startup-id wmctrl -c Plasma
-
-
-# Backgrounds apps
-exec nextcloud --background
-exec --no-startup-id nitrogen --restore
-exec_always --no-startup-id nm-applet
-exec_always --no-startup-id diodon
-exec --no-startup-id ~/Scripts/D2D/redshift.sh
-exec_always ~/Scripts/D2D/xidle.sh
-exec_always --no-startup-id numlockx
-exec_always --no-startup-id picom
-exec_always --no-startup-id tilda
-exec --no-startup-id dunst
-exec wal -R
 
 # Gnome session
 #exec --no-startup-id /usr/lib/gsd-xsettings
@@ -164,22 +165,15 @@ exec wal -R
 # Fix touchpad
 # Touch to tap + natural scrolling can be fixed in X11 config.
 
-# Running apps
-exec firefox
-exec_always --no-startup-id blueman-applet
-exec  /usr/bin/telegram-desktop
-
 # scratchpad
 bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
+# shutdown menu
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit?' -b 'ye' 'i3-msg exit'"
 
 # Notifications
 #for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
-
-
-# shutdown menu
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit?' -b 'ye' 'i3-msg exit'"
 
 # Colors
 set_from_resource $fg i3wm.color7 #f0f0f0
@@ -193,6 +187,12 @@ client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 client.background       $bg
+
+# Focus
+client.focused #689d6a #689d6a #282828 #282828
+client.focused_inactive #1d2021 #1d2021 #928374 #282828
+client.unfocused #32302f #32302f #928374 #282828
+client.urgent #cc241d #cc241d #ebdbb2 #282828
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -217,9 +217,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 #}
 
 # Assignments
-#assign [class="Firefox"] $workspace1
 assign [class="Moonlight"] $workspace6
 for_window [class="Moonlight"] move to workspace $workspace6
+#assign [class="Firefox"] $workspace1
 #assign [class="code-oss"] $workspace4
 #for_window [class="code-oss"] move to workspace $workspace4
 assign [class="Chromium"] $workspace6
@@ -250,8 +250,6 @@ assign [class="Skype"] $workspace8
 for_window [class="Skype"] move to workspace $workspace8
 assign [class="Skype"] $workspace8
 assign [class="Atom"] $workspace3
-for_window [class="keepassxc"] floating enable
-for_window [class="Nm-connection-editor"] floating enable
 assign [class="Civ6"] $workspace5
 for_window [class="Civ6"] move to workspace $workspace5
 assign [class="TPH.x86_64"] $workspace5
@@ -264,6 +262,8 @@ assign [class="Guild Wars 2"] $workspace8
 for_window [class="Guild Wars 2"] move to workspace $workspace8
 assign [class="Path of Exile"] $workspace8
 for_window [class="Path of Exile"] move to workspace $workspace8
+
+# Floating
 for_window [window_role="About"] floating enable
 for_window [class="Vmrc"] floating enable
 for_window [class="Pavucontrol"] floating enable
@@ -272,8 +272,15 @@ for_window [class="Nitrogen"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Wpg"] floating enable
 for_window [class="Arandr"] floating enable
+for_window [class="keepassxc"] floating enable
+for_window [class="Org.gnome.Nautilus"] floating enable
+for_window [class="Eog"] floating enable
+for_window [class="Nm-connection-editor"] floating enable
 
-# KDE
+
+# Special fixes for other DM
+
+## KDE
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 for_window [title="Desktop - Plasma"] kill; floating enable; border none
 for_window [title="Bureau — Plasma"] kill; floating enable; border none
@@ -293,13 +300,5 @@ for_window [class="Gnome-power-statistics"] floating disable
 for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"] 
 
-# Gnome
+## Gnome
 for_window [class="Gnome-control-center"] floating enable; border none
-
-# Focus
-client.focused #689d6a #689d6a #282828 #282828
-client.focused_inactive #1d2021 #1d2021 #928374 #282828
-client.unfocused #32302f #32302f #928374 #282828
-client.urgent #cc241d #cc241d #ebdbb2 #282828
-
-#exec xinput set-prop 11 291 1
