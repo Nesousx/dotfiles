@@ -13,7 +13,7 @@ set $mod Mod4
 #bindsym $mod+Shift+d exec "autorandr --load docked"
 #bindsym $mod+Shift+l exec "autorandr --load laptop"
 #bindsym $mod+Shift+d exec "~/Scripts/D2D/toggle_monitor_2.sh"
-    
+
 # Brightness
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"
 bindsym XF86MonBrighnessDown exec "xbacklight -dec 5"
@@ -128,7 +128,7 @@ bindsym $mod+d mode "resize"
 # Custom keybindings
 bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc 
 bindsym --release Print exec --no-startup-id flameshot gui
-bindsym $mod+l exec ~/Apps/i3lock-bing/i3lock-bing.sh
+bindsym $mod+l exec_always ~/Apps/i3lock-bing/i3lock-bing.sh
 #bindsym $mod+l exec xscreensaver-command -lock
 
 # No titlebars
@@ -143,13 +143,17 @@ gaps outer 4
 exec firefox
 exec telegram-desktop
 exec nextcloud --background
-exec nitrogen --restore
-exec tilda
+#exec nitrogen --restore
+exec pasystray
+#exec tilda
 exec_always numlockx
 exec_always picom
 exec_always dunst
 exec_always wal -R
 exec_always --no-startup-id ~/Scripts/D2D/redshift.sh
+exec --no-startup-id ~/.screenlayout/nvidia.sh
+exec --no-startup-id ~/Scripts/D2D/bing-wallpaper.sh
+#exec --no-startup-id kdeconnect-indicator
 #exec_always --no-startup-id ~/Scripts/D2D/xidle.sh
 
 
@@ -276,6 +280,8 @@ for_window [class="keepassxc"] floating enable
 for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [class="Eog"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
+for_window [class="Io.elementary.appcenter"] floating enable
+for_window [class="kdeconnect.sms"] floating enable
 
 
 # Special fixes for other DM
