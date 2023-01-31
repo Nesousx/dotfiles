@@ -128,7 +128,7 @@ bindsym $mod+d mode "resize"
 # Custom keybindings
 bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc 
 bindsym --release Print exec --no-startup-id flameshot gui
-bindsym $mod+l exec_always ~/Apps/i3lock-bing/i3lock-bing.sh
+bindsym $mod+l exec ~/Apps/i3lock-bing/i3lock-bing.sh
 #bindsym $mod+l exec xscreensaver-command -lock
 
 # No titlebars
@@ -145,15 +145,16 @@ exec telegram-desktop
 exec nextcloud --background
 #exec nitrogen --restore
 exec pasystray
-#exec tilda
+exec guake
 exec_always numlockx
 exec_always picom
 exec_always dunst
 exec_always wal -R
-exec_always --no-startup-id ~/Scripts/D2D/redshift.sh
+exec_always fcitx5
+exec --no-startup-id ~/Scripts/D2D/redshift.sh
 exec --no-startup-id ~/.screenlayout/nvidia.sh
 exec --no-startup-id ~/Scripts/D2D/bing-wallpaper.sh
-#exec --no-startup-id kdeconnect-indicator
+exec_always kdeconnect-indicator
 #exec_always --no-startup-id ~/Scripts/D2D/xidle.sh
 
 
