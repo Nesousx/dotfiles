@@ -126,7 +126,8 @@ mode "resize" {
 bindsym $mod+d mode "resize"
 
 # Custom keybindings
-bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc 
+#bindsym $mod+r exec rofi -show drun -show-icons -lines 3 -eh 2 -width 20 -padding 80 -opacity "70" -bw 0 -bc 
+bindsym $mod+r exec "~/.config/rofi/launcher.sh"
 bindsym --release Print exec --no-startup-id flameshot gui
 bindsym $mod+l exec ~/Apps/i3lock-bing/i3lock-bing.sh
 #bindsym $mod+l exec xscreensaver-command -lock
@@ -175,7 +176,8 @@ bindsym $mod+m move scratchpad
 bindsym $mod+o scratchpad show
 
 # shutdown menu
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit?' -b 'ye' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'exit?' -b 'ye' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id ~/.config/rofi/powermenu.sh
 
 # Notifications
 #for_window [class="Xfce4-notifyd"] floating enable;border none; focus mode_toggle
