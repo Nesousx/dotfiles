@@ -36,3 +36,6 @@ set mouse=
 set ttymouse=
 
 " Fix weird but in terminator
+
+" Fix for Kitty
+let &t_ut='' 
