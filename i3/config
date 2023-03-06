@@ -159,9 +159,11 @@ exec_always kdeconnect-indicator
 #exec_always --no-startup-id ~/Scripts/D2D/xidle.sh
 
 ## Laptop only
-exec nm-applet
+#exec nm-applet
 
 ## Desktop only
+exec --no-startup-id 'nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
+exec steam
 
 
 # Use KDE / Plasma
