@@ -150,7 +150,7 @@ exec guake
 exec_always numlockx
 exec_always picom
 exec_always dunst
-exec_always wal -R
+#exec_always wal -R
 exec_always fcitx5
 exec --no-startup-id ~/Scripts/D2D/redshift.sh
 #exec --no-startup-id ~/.screenlayout/nvidia.sh
@@ -159,11 +159,11 @@ exec_always kdeconnect-indicator
 #exec_always --no-startup-id ~/Scripts/D2D/xidle.sh
 
 ## Laptop only
-exec nm-applet
+#exec nm-applet
 
 ## Desktop only
-#exec --no-startup-id 'nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
-#exec steam
+exec --no-startup-id 'nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"'
+exec steam
 
 
 # Use KDE / Plasma
@@ -219,7 +219,6 @@ bar {
         -m cpu memory nic battery caffeine date time \
         -p time.format="%H:%M" date.format="%a, %b %d %Y" \
         nic.states=^down \
-        redshift.location=manual redshift.lat=49.4 redshift.lon=6.24 redshift.adjust=false \
         -t nord-colorful
 }
 
@@ -302,6 +301,7 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Io.elementary.appcenter"] floating enable
 for_window [class="kdeconnect.sms"] floating enable
 for_window [class="authenticator"] floating enable
+for_window [class="PCSX2"] floating enable
 
 
 # Special fixes for other DM
